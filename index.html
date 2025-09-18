@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Bingo Card Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>CS Teacher Bingo</h1>
+
+  <button id="rules-btn">Show Rules</button>
+  <p id="status" class="win-message">🎉 BINGO! You win! 🎉</p>
+
+  <div id="bingo-board"></div>
+  <button id="reset">Reset Card</button>
+
+  <div id="rules-popup" class="popup">
+    <h2>Bingo Rules</h2>
+    <p>Choose a question from the bingo card and discuss with another person.
+      Then click on the corresponding square when you have completed the discussion.</p>
+    <p>Get five in a row, column, or diagonal to win!</p>
+    <button id="close-rules">Close</button>
+  </div>
+
+  <div id="reset-popup" class="popup">
+    <h2>Are you sure you want to reset?</h2>
+    <p>This will clear the current Bingo board.</p>
+    <button id="confirm-reset">Yes, Reset</button>
+    <button id="cancel-reset">Cancel</button>
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>
