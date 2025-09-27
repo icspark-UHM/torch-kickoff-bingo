@@ -67,26 +67,13 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function checkWin() {
-    const cells = document.querySelectorAll(".bingo-cell");
-    let grid = [];
-    for (let i = 0; i < 5; i++) {
-      grid.push(Array.from(cells).slice(i * 5, i * 5 + 5));
-    }
-
-    for (let i = 0; i < 5; i++) {
-      if (grid[i].every(cell => cell.classList.contains("marked")) ||
-        grid.map(row => row[i]).every(cell => cell.classList.contains("marked"))) {
-        declareWin();
-        return;
-      }
-    }
-
-    if (grid.map((row, i) => row[i]).every(cell => cell.classList.contains("marked")) ||
-      grid.map((row, i) => row[4 - i]).every(cell => cell.classList.contains("marked"))) {
-      declareWin();
-      return;
-    }
+  // Blackout win: ALL cells must be marked
+  const cells = document.querySelectorAll(".bingo-cell");
+  const allMarked = Array.from(cells).every(cell => cell.classList.contains("marked"));
+  if (allMarked) {
+    declareWin();
   }
+}
 
   function declareWin() {
     statusText.style.display = "block";
